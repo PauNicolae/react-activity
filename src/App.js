@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Exercises1 from './pages/Exercise1';
 import Exercises2 from './pages/Exercise2';
@@ -12,7 +12,7 @@ import Navbar from './component/Navbar';
 
 export default function App() {
    return (
-      <HashRouter basename='/react-activity'>
+      <BrowserRouter>
          <Navbar />
          <Routes>
             <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ export default function App() {
             <Route exact path="/Exercises5" element={<Exercises5 />} />
             <Route exact path="/Exercises6" element={<Exercises6 />} />
          </Routes>
-      </HashRouter>
+      </BrowserRouter>
    );
 }
 
