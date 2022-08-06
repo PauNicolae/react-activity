@@ -1,57 +1,43 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import '../styles/Exercise6.css';
 import React, { useState } from 'react';
+import '../styles/Exercise6.css';
 
-function BasicExample() {
-   const [name, setName] = useState({
-      FirstName: '',
-      LastName: '',
-   });
+const Exercise6 = () => {
+   const [firstName, setfirstName] = useState('');
+   const [lastName, setlastName] = useState('');
 
-   function handleFirstNameChange(e) {
-      setName({
-         FirstName: e.target.value,
-      });
-   }
-
-   function handleLastNameChange(e) {
-      setName({
-         LastName: e.target.value,
-      });
-   }
+   const submitValue = () => {
+      const details = {
+         'First Name': firstName,
+         'Last Name': lastName,
+      };
+      alert(
+         'Hello ' + details['First Name'] + ' ' + details['Last Name']
+      );
+   };
 
    return (
       <Form>
-         <Form.Group className="mb-3" controlId="FirstName">
+         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
                type="text"
-               placeholder="First Name"
-               onChange={handleFirstNameChange}
+               placeholder="First name"
+               onChange={(e) => setfirstName(e.target.value)}
             />
          </Form.Group>
-
-         <Form.Group className="mb-3" controlId="LastName">
+         <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
                type="text"
-               placeholder="Last Name"
-               onChange={handleLastNameChange}
+               placeholder="Last name"
+               onChange={(e) => setlastName(e.target.value)}
             />
          </Form.Group>
-         <Button
-            className="btn"
-            variant="danger"
-            type="submit"
-            onClick={() => {
-               alert(
-                  'Hello' + {handleFirstNameChange} + {handleLastNameChange} +'!'
-               );
-            }}
-         >
-            GREET ME!
+         <Button variant="primary" type="submit" onClick={submitValue}>
+            GREET ME
          </Button>
       </Form>
    );
-}
+};
 
-export default BasicExample;
+export default Exercise6;
