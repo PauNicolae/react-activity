@@ -12,7 +12,7 @@ import Navbar from './component/Navbar';
 
 export default function App() {
    return (
-      <HashRouter>
+      <HashRouter basename='/react-activity'>
          <Navbar />
          <Routes>
             <Route path="/" element={<Home />} />
