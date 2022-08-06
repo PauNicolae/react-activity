@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    justify-content: center;
+    }
+    
+    Form{
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 5rem;
+        padding: 2rem;
+        width: 30rem;
+    }
+    
+    h1{
+        color: black;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .form-label{
+        color:black;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .text-muted{
+        font-size: 1rem;
+        margin-left: 0;
+        color: black;
+    }
+    
+    .checkbox{
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    
+    .check{
+        margin: 0;
+    }
+    
+    .form-check-label{
+        color: black;
+        font-size: 1rem;
+        
+    }
+
+    .btn{
+        width: 100%;
+    }
