@@ -6,14 +6,24 @@ import '../styles/Exercise6.css';
 const Exercise6 = () => {
    const [firstName, setfirstName] = useState('');
    const [lastName, setlastName] = useState('');
+//show user input
+const handleUserFirstName = (e) => {
+   setfirstName(e.target.value)
+}
+
+const handleUserLastName = (e) => {
+   setlastName(e.target.value)
+}
 
    const submitValue = () => {
       const details = {
-         'First Name': firstName,
-         'Last Name': lastName,
+         firstName: 'First Name', 
+         lastName: 'Last Name'
+         
+        
       };
       alert(
-         'Hello ' + details['First Name'] + ' ' + details['Last Name']
+         'Hello ' + firstName + ' ' + lastName + '!' 
       );
    };
 
@@ -23,14 +33,17 @@ const Exercise6 = () => {
             <Form.Control
                type="text"
                placeholder="First name"
-               onChange={(e) => setfirstName(e.target.value)}
+               value={firstName}
+               // onChange={(e) => setfirstName(e.target.value)}
+               onChange={handleUserFirstName}
             />
          </Form.Group>
          <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
                type="text"
                placeholder="Last name"
-               onChange={(e) => setlastName(e.target.value)}
+               // onChange={(e) => setlastName(e.target.value)}
+               onChange={handleUserLastName}
             />
          </Form.Group>
          <Button variant="primary" type="submit" onClick={submitValue}>
